@@ -1,6 +1,6 @@
 {
   "name": "discord-osiris",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Judges suspicious Discord links",
   "repository": "owlnai/discord-osiris",
   "main": "./dist/index.cjs",
@@ -15,10 +15,9 @@
   "scripts": {
     "build": "unbuild",
     "dev": "vitest",
-    "lint": "eslint --ext .ts .",
     "prepack": "unbuild",
     "release": "pnpm test && standard-version && git push --follow-tags && pnpm publish",
-    "test": "pnpm lint && vitest run"
+    "test": "vitest run"
   },
   "packageManager": "pnpm@7.0.1",
   "license": "MIT",
