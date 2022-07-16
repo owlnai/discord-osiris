@@ -8,7 +8,7 @@ Judges dangerous Discord links
 - Optimized for speed (~3ms per string) 🚀
 ## Usage
 ```JavaScript
-import { checkString } from '@owlnai/osiris'
+import { checkString } from 'discord-osiris'
 
 const susMessage = "Hello don't click on this link, it's dangerous! https://dlscord-egfits.com/fromsteamnitro"
 
