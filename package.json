@@ -1,0 +1,33 @@
+{
+  "name": "discord-osiris",
+  "version": "1.0.0",
+  "description": "Judges suspicious Discord links",
+  "repository": "owlnai/discord-osiris",
+  "main": "./dist/index.cjs",
+  "exports": {
+    "import": "./dist/index.mjs",
+    "require": "./dist/index.cjs"
+  },
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "unbuild",
+    "dev": "vitest",
+    "lint": "eslint --ext .ts .",
+    "prepack": "unbuild",
+    "release": "pnpm test && standard-version && git push --follow-tags && pnpm publish",
+    "test": "pnpm lint && vitest run"
+  },
+  "packageManager": "pnpm@7.0.1",
+  "license": "MIT",
+  "dependencies": {
+    "standard-version": "^9.5.0",
+    "unbuild": "^0.7.4",
+    "vitest": "^0.18.0"
+  },
+  "prettier": {
+    "semi": false
+  }
+}
