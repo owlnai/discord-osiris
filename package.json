@@ -1,6 +1,6 @@
 {
   "name": "discord-osiris",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Judges suspicious Discord links",
   "repository": "owlnai/discord-osiris",
   "main": "./dist/index.cjs",
