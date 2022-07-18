@@ -8,9 +8,12 @@ Judges dangerous Discord links
 - Optimized for speed (~3ms per string) 🚀
 ## Usage
 ```JavaScript
-import { checkString } from 'discord-osiris'
+import { checkString, regexes } from 'discord-osiris'
 
 const susMessage = "Hello don't click on this link, it's dangerous! https://dlscord-egfits.com/fromsteamnitro"
 
-checkString(susMessage).then(console.log) // true
+checkString(susMessage, regexes).then(console.log) // true
 ```
+
+### Extend patterns
+The second parameter of checkString (`patterns`) accepts an array of either RegExp or strings. You can pass your own array and/or extend the current configuration.
