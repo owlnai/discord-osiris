@@ -1,9 +1,18 @@
-function findURLsInText(str: string) {
+/**
+ * Find URL(s) in a string
+ * @param {string} str - String to search
+ */
+function findURLsInText(str: string): string[] {
   const urlPattern = /https?:\/\/(?:www\d?\.)?([^\s/]+)/g
   const matches = str.matchAll(urlPattern)
   return [...matches].map((match) => match[1].toLowerCase())
 }
 
+/**
+ * Checks a string against a list of atterns
+ * @param str String to check
+ * @param patterns Patterns to check against
+ */
 export async function checkString(
   str: string,
   patterns: string[] | RegExp[]
