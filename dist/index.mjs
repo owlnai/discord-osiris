@@ -1,3 +1,21 @@
+function findURLsInText(str) {
+  const urlPattern = /https?:\/\/(?:www\d?\.)?([^\s/]+)/g;
+  const matches = str.matchAll(urlPattern);
+  return [...matches].map((match) => match[1].toLowerCase());
+}
+async function checkString(str, patterns) {
+  const matches = findURLsInText(str);
+  for (const match of matches) {
+    for (const pattern of patterns) {
+      const regex = new RegExp(pattern);
+      if (regex.test(match)) {
+        return true;
+      }
+    }
+  }
+  return false;
+}
+
 const regexes = [
   /^discordapp.cam/,
   /^discordap\..*/,
@@ -27,21 +45,4 @@ const regexes = [
   /^discordrgift.com/
 ];
 
-function findURLsInText(str) {
-  const urlPattern = /https?:\/\/(?:www\d?\.)?([^\s/]+)/g;
-  const matches = str.matchAll(urlPattern);
-  return [...matches].map((match) => match[1].toLowerCase());
-}
-async function checkString(str) {
-  const matches = findURLsInText(str);
-  for (const match of matches) {
-    for (const regex of regexes) {
-      if (regex.test(match)) {
-        return true;
-      }
-    }
-  }
-  return false;
-}
-
-export { checkString };
+export { checkString, regexes };
