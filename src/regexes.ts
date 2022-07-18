@@ -1,4 +1,4 @@
-export default [
+export const regexes = [
   /^discordapp.cam/,
   /^discordap\..*/,
   /^airdrop-discord\.ru/,

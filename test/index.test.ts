@@ -6,13 +6,15 @@ describe("osiris", () => {
     expect(Object.keys(osiris)).toMatchInlineSnapshot(`
       [
         "checkString",
+        "presetRegexes",
       ]
     `)
   })
   it("can detect a bad link", async () => {
     const message = `Hello guys check out my Call of Duty gameplay!!! 
     https://dlscord-egfits.com/fromsteamnitro` // don't
-    expect(await osiris.checkString(message)).toMatchInlineSnapshot(`
+    expect(await osiris.checkString(message, osiris.regexes))
+      .toMatchInlineSnapshot(`
       true
     `)
   })
