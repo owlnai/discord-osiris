@@ -6,7 +6,7 @@ describe("osiris", () => {
     expect(Object.keys(osiris)).toMatchInlineSnapshot(`
       [
         "checkString",
-        "presetRegexes",
+        "regexes",
       ]
     `)
   })
